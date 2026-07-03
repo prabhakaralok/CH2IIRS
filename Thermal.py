@@ -36,6 +36,8 @@ from .Thermal_dialog import Ch2L2Dialog
 from .Corrector import Corrector as cc
 from .Incidence import Incidence as II
 from .ThermalInci import Corrector as TI
+from .PhaseC import Corrector as PC
+from .TempC import Corrector as TC
 import os.path
 
 
@@ -226,6 +228,16 @@ class Ch2L2:
     def ThermalIncidence(self,task):
         II(self.inSolar, self.path, self.outPath)
         TI(self.inSolar, self.path, self.outPath)
+
+    def PhaseCor(self, task):
+        II(self.inSolar, self.path, self.outPath)
+        cc(self.inSolar, self.path, self.outPath)
+        PC(self.inPhase, self.path, self.outPath)
+
+    def Temp(self, task):
+        TC(self.inSolar, self.path, self.outPath)
+
+
           
     def comp(self, exception, result=None):
         if exception is None:
@@ -242,6 +254,10 @@ class Ch2L2:
 
         global sTime
         sTime=time.time()
+
+        self.inPhase=os.path.dirname(os.path.abspath(__file__))
+
+
         self.inSolar = self.dlg.lineEdit.text()
         if not os.path.isfile(self.inSolar):
             self.inSolar=r'Solar flux.txt'
@@ -258,6 +274,11 @@ class Ch2L2:
         if self.dlg.radioButton_3.isChecked():
             self.task1 = QgsTask.fromFunction('Processing',self.ThermalIncidence, on_finished=self.comp)
 
+        if self.dlg.radioButton_4.isChecked():
+            self.task1 = QgsTask.fromFunction('Processing',self.PhaseCor, on_finished=self.comp)
+
+        if self.dlg.radioButton_5.isChecked():
+            self.task1 = QgsTask.fromFunction('Processing',self.Temp, on_finished=self.comp)
 
 
 

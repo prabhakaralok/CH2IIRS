@@ -6,11 +6,11 @@
 name=Chandrayaan-2 IIRS
 qgisMinimumVersion=3.0
 description=Generates reflectance from Radiance data of  Imaging Infrared Spectrometer sensor of Chandrayaan 2
-version=1.0
+version=2.1
 author=Prabhakar Alok Verma
 email=prabhakar.9219@gmail.com
 
-about=This plugin performs thermal correction in the radiance data of Imaging Infrared Spectrometer (IIRS) sensor of Chandrayaan 2. Algorithm of the plugin can be found at <a href="https://www.sciencedirect.com/science/article/abs/pii/S0019103522001853"> Verma, P. A., Chauhan, M., & Chauhan, P. (2022). Lunar surface temperature estimation and thermal emission correction using Chandrayaan-2 imaging infrared spectrometer data for H2O & OH detection using 3 μm hydration feature. Icarus, 383, 115075 </a>. Visit homepage for instructions.
+about=This plugin performs thermal correction and phase correction in the radiance data of Imaging Infrared Spectrometer (IIRS) sensor of Chandrayaan 2. Algorithm of the plugin can be found at <a href="https://www.sciencedirect.com/science/article/abs/pii/S0019103522001853"> Thermal Correction </a>, <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/maps.70037"> Phase Correction </a>. Visit homepage for instructions.
 
 tracker=https://github.com/prabhakaralok/CH2IIRS
 repository=https://github.com/prabhakaralok/CH2IIRS
@@ -20,7 +20,7 @@ repository=https://github.com/prabhakaralok/CH2IIRS
 
 hasProcessingProvider=no
 # Uncomment the following line and add your changelog:
-# changelog=
+changelog= Phase correction and only temperature calculation added
 
 # Tags are comma separated with spaces allowed
 tags=python, IIRS, chandrayaan, Hyperspectral, moon, level 2, lunar

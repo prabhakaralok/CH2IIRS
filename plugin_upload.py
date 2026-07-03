@@ -7,7 +7,7 @@
 
 import sys
 import getpass
-import xmlrpc.client
+import xmlrpc.client #nosec
 from optparse import OptionParser
 
 standard_library.install_aliases()

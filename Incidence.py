@@ -1,9 +1,12 @@
 import numpy as np 
 from osgeo import gdal
 import os
+import re
 from datetime import datetime, timedelta
 import xml.etree.ElementTree as ET 
 from xml.dom import minidom
+# from .vendor.defusedxml.minidom import parse
+
 from scipy.interpolate import interp1d
 
 
@@ -26,8 +29,18 @@ def Incidence(inSolar, path, outPath):
 
     ### Get inclination
 
-    mydoc = minidom.parse(xmlPath)
-    start_time_String = mydoc.getElementsByTagName('start_date_time')[0].firstChild.data
+ 
+    mydoc = parse(xmlPath) #nosec
+    start_time_String = mydoc.getElementsByTagName('start_date_time')[0].firstChild.data #nosec
+
+
+    # node = mydoc.getElementsByTagName("start_date_time")
+    # if node and node[0].firstChild:
+    #     start_time_String = node[0].firstChild.data
+
+    start_time_String = re.sub(r'(\.\d{6})\d+(Z)', r'\1\2', start_time_String)
+
+
     start_time=datetime.strptime(start_time_String,'%Y-%m-%dT%H:%M:%S.%fZ').timestamp()
     incImage = np.zeros((YSize,XSize))
     phaseImage = np.zeros((YSize,XSize))
