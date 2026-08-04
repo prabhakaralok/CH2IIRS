@@ -3,9 +3,8 @@ from osgeo import gdal
 import os
 import re
 from datetime import datetime, timedelta
-import xml.etree.ElementTree as ET 
-from xml.dom import minidom
-# from .vendor.defusedxml.minidom import parse
+import xml.etree.ElementTree as ET #nosec
+from xml.dom import minidom #nosec
 
 from scipy.interpolate import interp1d
 
@@ -30,7 +29,7 @@ def Incidence(inSolar, path, outPath):
     ### Get inclination
 
  
-    mydoc = parse(xmlPath) #nosec
+    mydoc = minidom.parse(xmlPath) #nosec
     start_time_String = mydoc.getElementsByTagName('start_date_time')[0].firstChild.data #nosec
 
 

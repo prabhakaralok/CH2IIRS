@@ -26,7 +26,7 @@ from qgis.PyQt.QtWidgets import QAction, QFileDialog, QMessageBox, QInputDialog,
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
 import time
-from PyQt5 import QtCore
+from qgis.PyQt import QtCore
 from qgis.core import QgsTask, QgsTaskManager, QgsApplication 
 
 # Initialize Qt resources from file resources.py
@@ -208,7 +208,7 @@ class Ch2L2:
     def toolButton_4(self):
         directory_path = QFileDialog.getExistingDirectory(
             self.dlg, self.tr('Select a folder:'),
-            os.path.expanduser('~'), QFileDialog.ShowDirsOnly)
+            os.path.expanduser('~'), QFileDialog.Option.ShowDirsOnly)
 
         if directory_path:
             self.selected_folder = directory_path[:]
@@ -307,7 +307,7 @@ class Ch2L2:
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop
-        result = self.dlg.exec_()
+        result = self.dlg.exec()
 
         if result:
             # Do something useful here - delete the line containing pass and

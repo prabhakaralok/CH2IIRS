@@ -6,7 +6,7 @@
 name=Chandrayaan-2 IIRS
 qgisMinimumVersion=3.0
 description=Generates reflectance from Radiance data of  Imaging Infrared Spectrometer sensor of Chandrayaan 2
-version=2.1
+version=2.3
 author=Prabhakar Alok Verma
 email=prabhakar.9219@gmail.com
 
