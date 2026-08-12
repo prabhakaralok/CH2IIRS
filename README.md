@@ -32,5 +32,4 @@ Radiance image of IIRS and solar flux are the input for this plugin. However, so
 <ul>Temperature:
   <ul><li>Generates Lunar Surface Temperature image </li> 
   <li> This tool will work for any spatial subset of radiance image also.</li>
-  <li>Temperature image will be the outputs and <i>input_filename_inc_Phase</i>, <i>input_filename_Temp</i> file will be created.</li>
-  <li><b>Note: Input file as well as other supporting files must be in the folder structure of ISSDC</b></li>  </ul></ul>
+  <li>Temperature image will be the output and <i>input_filename_Temp</i> file will be created.</li> </ul></ul>
