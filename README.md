@@ -1,7 +1,14 @@
 # CH2IIRS
 Chandrayaan 2 Level 2 IIRS data processing.
 This plugin performs Thermal correction, Phase correction in the radiance data of Imaging Infrared Spectrometer (IIRS) sensor of Chandrayaan 2. </br>Algorithm of the plugin for thermal correction can be found at <a href="https://www.sciencedirect.com/science/article/abs/pii/S0019103522001853"> Verma, P. A., Chauhan, M., & Chauhan, P. (2022). Lunar surface temperature estimation and thermal emission correction using Chandrayaan-2 imaging infrared spectrometer data for H2O & OH detection using 3 μm hydration feature. Icarus, 383, 115075 </a>.</br>
-</br>Algorithm of the plugin for phase correction can be found at <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/maps.70037"> Chauhan, M., Verma, P. A., & Chauhan, P. (2025). Level‐2 processing of Chandrayaan‐2 Imaging Infrared Spectrometer (IIRS) data for generation of surface reflectance. Meteoritics & Planetary Science, 60(9), 2269-2282. </a>.</br>
+</br>Algorithm of the plugin for phase correction can be found at <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/maps.70037"> Chauhan, M., Verma, P. A., & Chauhan, P. (2025). Level‐2 processing of Chandrayaan‐2 Imaging Infrared Spectrometer (IIRS) data for generation of surface reflectance. Meteoritics & Planetary Science, 60(9), 2269-2282. </a></br>
+
+<b>Nomenclature of files:</b>
+<br>input_filename_phase: Reflectance Corrected for Phase, Incidence angle and Thermal
+<br>input_filename_inc_corrRef: Reflectance Corrected for Incidence angle and Thermal
+<br>input_filename_corrRef: Reflectance Corrected for Thermal
+<br>input_filename_Temp: Temperature
+<br>input_filename_angle: Incidence angle</br>
 
 Radiance image of IIRS and solar flux are the input for this plugin. However, solar flux is optional input. All the inputs should be corresponding to all 256 bands of IIRS. <b> This tool works for dark corrected radiance data i.e. file name shall be ch2_iir_nci_xxxxxxxxxxxxxxxxxxx_d_img_xxx</b>
 </br>
